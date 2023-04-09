@@ -4,6 +4,7 @@ import Header from '@/components/header'
 import HorizontalCards from '@/components/horizontalCards'
 import ShuffleCards from "@/components/shuffleCards"
 import Video from "@/components/video"
+import styles from "../styles/Home.module.css"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,9 +23,17 @@ export default function Home() {
         <Header>
           <h1>Film maker</h1>
         </Header>
-        <HorizontalCards />
         <ShuffleCards />
+        <div className={styles.context}>
+          We love to visualize stories because we love people and they inspire
+          us.
+        </div>
         <Video />
+        <div className={styles.context}>
+          We are a creative agency, film production, branded & original content
+          creators.
+        </div>
+        <HorizontalCards />
       </main>
     </>
   )

@@ -21,3 +21,30 @@
 .header.hide {
   transform: translateY(-80px) translateX(-50%);
 }
+
+.context {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.shuffleCards {
+  height: 300px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper {
+  background: #ccc;
+}
+
+.video {
+  width: 100%;
+}
+
+.horizontalCards {
+  height: 300px;
+}

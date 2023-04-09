@@ -1,9 +1,9 @@
 import React from 'react'
+import styles from "../styles/Home.module.css"
+
 
 const ShuffleCards = () => {
-  return (
-    <div>ShuffleCards</div>
-  )
+  return <div className={styles.shuffleCards}>ShuffleCards</div>
 }
 
 export default ShuffleCards
