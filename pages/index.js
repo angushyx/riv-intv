@@ -19,7 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header />
+        <Header>
+          <h1>Film maker</h1>
+        </Header>
         <HorizontalCards />
         <ShuffleCards />
         <Video />
