@@ -1,16 +1,11 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Header from '@/components/header'
-import HorizontalCards from '@/components/horizontalCards'
+import Head from "next/head"
+import Header from "@/components/header"
+import HorizontalCards from "@/components/horizontalCards"
 import ShuffleCards from "@/components/shuffleCards"
 import Video from "@/components/video"
 import styles from "../styles/Home.module.css"
 
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -25,13 +20,13 @@ export default function Home() {
         </Header>
         <ShuffleCards />
         <div className={styles.context}>
-          We love to visualize stories because we love people and they inspire
-          us.
+          We love to visualize stories
+          <br /> because we love people and they inspire us.
         </div>
         <Video />
         <div className={styles.context}>
-          We are a creative agency, film production, branded & original content
-          creators.
+          We are a creative agency, film production,
+          <br /> branded & original content creators.
         </div>
         <HorizontalCards />
       </main>
