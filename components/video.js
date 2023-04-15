@@ -7,12 +7,23 @@ const Video = () => {
   const [playbackTime, setPlaybackTime] = useState(0) // 記錄影片目前的播放時間
   const videoRef = useRef(null) // 取得 video element 的 Ref
 
-  // 處理 IntersectionObserver 的 callback
+  // 影片可以播放的 callback
+  const handleCanPlay = () => {
+    if (isVisible && !isPlaying) {
+      setIsPlaying(true)
+      videoRef.current.play()
+    }
+  }
+
   const handleIntersection = (entries) => {
     const entry = entries[0]
     // 如果影片進入畫面且至少有 30% 在畫面內設定為顯示
     if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
       setIsVisible(true)
+      if (!isPlaying) {
+        setIsPlaying(true)
+        videoRef.current.play()
+      }
     } else {
       setIsVisible(false) // 設定為不顯示
       setPlaybackTime(videoRef.current.currentTime) // 記錄目前的播放時間
@@ -23,7 +34,6 @@ const Video = () => {
   }
 
   // 建立 IntersectionObserver，設定至少有 30% 在畫面內才算是進入畫面
-
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: 0.3,
@@ -37,12 +47,10 @@ const Video = () => {
     }
   }, [videoRef])
 
-  // TODO:點擊功能失去?
   // 點擊 video element 時的 callback
   const handleVideoClick = () => {
     if (isVisible) {
       if (isPlaying) {
-        console.log("失去功能?")
         setIsPlaying(false)
         videoRef.current.pause()
       } else {
@@ -64,14 +72,6 @@ const Video = () => {
     }
   }
 
-  // 影片可以播放的 callback
-  const handleCanPlay = () => {
-    if (isVisible && !isPlaying) {
-      setIsPlaying(true)
-      videoRef.current.play()
-    }
-  }
-
   // 當影片不在範圍內 callback
   const handleVisibilityChange = () => {
     if (document.hidden && isPlaying) {
@@ -89,23 +89,19 @@ const Video = () => {
     }
   }, [isPlaying])
 
-  // console.log(isVisible, "isVisible")
-  // console.log(isPlaying, "isPlaying")
-  console.log("playbackTime", playbackTime)
-
   return (
     <div className={styles.video}>
       <video
         ref={videoRef}
         className={styles.video}
         src="/videos/sample.mp4"
-        // autoPlay={true}
+        autoPlay={true}
         loop
         muted={true}
         controls={false}
         onClick={handleVideoClick}
         onTimeUpdate={handleTimeUpdate}
-        onCanPlay={handleCanPlay()}
+        onCanPlay={handleCanPlay}
         currentTime={playbackTime}
       />
     </div>
