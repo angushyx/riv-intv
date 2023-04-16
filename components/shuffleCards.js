@@ -7,7 +7,6 @@ import shuffleTwo from "../public/images/shuffle/shuffle2.png"
 const ShuffleCards = () => {
   const [isCardOneClicked, setIsCardOneClicked] = useState(false)
   const [isCardTwoClicked, setIsCardTwoClicked] = useState(false)
-  console.log(isCardTwoClicked)
 
   const handleCardClick = () => {
     setIsCardOneClicked(!isCardOneClicked)
@@ -44,9 +43,7 @@ const ShuffleCards = () => {
           width="1000"
           height="1000"
           className={`${styles.img} ${
-            isCardTwoClicked
-              ? styles.shuffleCardOneImage
-              : styles.shuffleCardTwoImage
+            isCardTwoClicked ? styles.cardTwoEnlarged : ""
           }`}
         />
       </div>
