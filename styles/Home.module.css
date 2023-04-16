@@ -84,6 +84,7 @@
   margin: 150px auto;
   margin-bottom: 500px;
   height: 20px;
+  perspective: 1000px;
 }
 
 .shuffleCard {
@@ -93,41 +94,75 @@
   transition: all 0.3s ease-in-out;
   transform-origin: top left;
   cursor: pointer;
-  transform: translate(20px, 20px);
+  animation-duration: 1s;
 }
 
+/* 原本 */
 .shuffleCardOne {
   z-index: 2;
   top: 10%;
   left: 10%;
 }
-.shuffleCardOneImage {
-  transition: all 0.3s ease-in-out;
-  transform: scale(1.1);
-}
 
-.shuffleCardTwoImage {
-  transition: all 0.3s ease-in-out;
-  transform: scale(0.8);
-}
-
+/* 原本 */
 .shuffleCardTwo {
   z-index: 3;
   top: 200px;
   left: 30%;
 }
 
-.cardOneOnTop {
-  z-index: 2;
-  transform: translate(0px, -30px);
-}
-
-.cardTwoOnTop {
+/* 點擊之後 */
+.cardOneClicked {
   z-index: 3;
-  transform: translate(10px, 10px);
+  animation-name: cardOneAnimation;
+  animation-fill-mode: forwards;
 }
 
-.cardOneOnTop:hover,
-.cardTwoOnTop:hover {
+/* 點擊之後 */
+.cardTwoClicked {
+  z-index: 2;
+  animation-name: cardTwoAnimation;
+  animation-fill-mode: forwards;
+}
+
+.cardOneEnlarged {
+  transform: scale(1.1);
+}
+
+.cardTwoEnlarged {
   transform: scale(1);
+}
+
+@keyframes cardOneAnimation {
+  0% {
+    /* 初始狀態 */
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    /* 結束狀態 */
+    transform: translateX(-100px) scale(1.2);
+  }
+  100% {
+    /* 結束狀態 */
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes cardTwoAnimation {
+  0% {
+    /* 初始狀態 */
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    /* 結束狀態 */
+    transform: translateX(100px) scale(1.2);
+  }
+  100% {
+    /* 結束狀態 */
+    transform: translateX(0) scale(1.2);
+  }
+}
+
+.enlarged {
+  transform: scale(1.2);
 }

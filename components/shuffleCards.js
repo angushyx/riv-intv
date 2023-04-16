@@ -5,18 +5,21 @@ import shuffleOne from "../public/images/shuffle/shuffle1.png"
 import shuffleTwo from "../public/images/shuffle/shuffle2.png"
 
 const ShuffleCards = () => {
-  const [isCardOneOnTop, setIsCardOneOnTop] = useState(true)
+  const [isCardOneClicked, setIsCardOneClicked] = useState(false)
+  const [isCardTwoClicked, setIsCardTwoClicked] = useState(false)
+  console.log(isCardTwoClicked)
 
   const handleCardClick = () => {
-    setIsCardOneOnTop((prev) => !prev)
+    setIsCardOneClicked(!isCardOneClicked)
+    setIsCardTwoClicked(!isCardTwoClicked)
   }
 
   return (
     <div className={styles.shuffleCardsWrapper}>
       <div
         className={`${styles.shuffleCardOne} ${styles.shuffleCard} ${
-          isCardOneOnTop ? styles.cardOneOnTop : styles.cardTwoOnTop
-        }`}
+          isCardOneClicked ? styles.cardOneClicked : ""
+        } `}
         onClick={handleCardClick}
       >
         <Image
@@ -25,16 +28,14 @@ const ShuffleCards = () => {
           width="1000"
           height="1000"
           className={`${styles.img} ${
-            isCardOneOnTop
-              ? styles.shuffleCardTwoImage
-              : styles.shuffleCardOneImage
+            isCardOneClicked ? styles.cardOneEnlarged : ""
           }`}
         />
       </div>
       <div
-        className={`${styles.shuffleCardTwo}  ${styles.shuffleCard} ${
-          isCardOneOnTop ? styles.cardTwoOnTop : styles.cardOneOnTop
-        }`}
+        className={`${styles.shuffleCardTwo} ${styles.shuffleCard} ${
+          isCardTwoClicked ? styles.cardTwoClicked : ""
+        } `}
         onClick={handleCardClick}
       >
         <Image
@@ -43,7 +44,7 @@ const ShuffleCards = () => {
           width="1000"
           height="1000"
           className={`${styles.img} ${
-            isCardOneOnTop
+            isCardTwoClicked
               ? styles.shuffleCardOneImage
               : styles.shuffleCardTwoImage
           }`}
