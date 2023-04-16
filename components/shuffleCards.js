@@ -14,7 +14,7 @@ const ShuffleCards = () => {
   return (
     <div className={styles.shuffleCardsWrapper}>
       <div
-        className={`${styles.shuffleCard} ${
+        className={`${styles.shuffleCardOne} ${styles.shuffleCard} ${
           isCardOneOnTop ? styles.cardOneOnTop : styles.cardTwoOnTop
         }`}
         onClick={handleCardClick}
@@ -28,7 +28,7 @@ const ShuffleCards = () => {
         />
       </div>
       <div
-        className={`${styles.shuffleCard} ${
+        className={`${styles.shuffleCardTwo}  ${styles.shuffleCard} ${
           isCardOneOnTop ? styles.cardTwoOnTop : styles.cardOneOnTop
         }`}
         onClick={handleCardClick}

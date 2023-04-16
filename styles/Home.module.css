@@ -93,23 +93,32 @@
   transition: all 0.3s ease-in-out;
   transform-origin: top left;
   cursor: pointer;
+  transform: scale(1.1) translate(20px, 20px);
+}
+
+.shuffleCardOne {
+  z-index: 2;
+  top: 10%;
+  left: 10%;
+}
+
+.shuffleCardTwo {
+  z-index: 3;
+  top: 250px;
+  left: 35%;
 }
 
 .cardOneOnTop {
   z-index: 2;
-  top: 10%;
-  left: 10%;
-  transform: scale(1.1) translate(20px, 20px);
+  transform: scale(1.2) translate(0px, 10px);
 }
 
 .cardTwoOnTop {
   z-index: 3;
-  top: 250px;
-  left: 35%;
-  transform: scale(1.1) translate(20px, 20px);
+  transform: scale(1.2) translate(-20px, 50px);
 }
 
 .cardOneOnTop:hover,
 .cardTwoOnTop:hover {
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
