@@ -1,38 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Riv面試題</h1>
 
-## Getting Started
+ <br>
 
-First, run the development server:
+#### 🔗Website URL: <a href="https://riv-intv.vercel.app/"><strong>riv-intv</strong></a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<hr>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 四個 section
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Header
+- ShuffleCards
+- Video
+- HorizontalCards
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 使用技術
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Next.js ( 13.2.4 )](https://nextjs.org/)
+- [CSS](https://developer.mozilla.org/zh-TW/docs/Web/CSS)
+- [vercel](https://vercel.com/dashboard) Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 版本控制
 
-## Learn More
+- Git / Github
 
-To learn more about Next.js, take a look at the following resources:
+### 資料夾結構
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Folder      | Description  |
+| ----------- | ------------ |
+| components/ | 各個 section |
+| page /      | index-->首頁 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+### 各section實作的方法和內容
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
