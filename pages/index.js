@@ -18,7 +18,9 @@ export default function Home() {
         <Header>
           <h1>Film maker</h1>
         </Header>
+        {/* <div className={styles.ShuffleCardsContainer}> */}
         <ShuffleCards />
+        {/* </div> */}
         <div className={styles.context}>
           We love to visualize stories
           <br /> because we love people and they inspire us.

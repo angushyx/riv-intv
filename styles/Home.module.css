@@ -78,6 +78,38 @@
   width: 100%;
 }
 
-.horizontalCards {
-  height: 300px;
+.shuffleCardsWrapper {
+  position: relative;
+  width: 80%;
+  margin: 150px auto;
+  margin-bottom: 500px;
+  height: 20px;
+}
+
+.shuffleCard {
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  transform-origin: top left;
+  cursor: pointer;
+}
+
+.cardOneOnTop {
+  z-index: 2;
+  top: 10%;
+  left: 10%;
+  transform: scale(1.1) translate(20px, 20px);
+}
+
+.cardTwoOnTop {
+  z-index: 3;
+  top: 250px;
+  left: 35%;
+  transform: scale(1.1) translate(20px, 20px);
+}
+
+.cardOneOnTop:hover,
+.cardTwoOnTop:hover {
+  transform: scale(1.2);
 }
