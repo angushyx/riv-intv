@@ -9,10 +9,10 @@ import cardFive from "../public/images/Horizontal/Horizontal5.png"
 
 const HorizontalCards = () => {
   const cardImages = [cardOne, cardTwo, cardThree, cardFour, cardFive]
-
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(null)
   const [scrollLeft, setScrollLeft] = useState(0)
+  const [scrollTarget, setScrollTarget] = useState(0)
   const cardsWrapperRef = useRef(null)
   const multiplier = 2
 
@@ -20,6 +20,7 @@ const HorizontalCards = () => {
     setIsDragging(true)
     setStartX(e.pageX - cardsWrapperRef.current.offsetLeft)
     setScrollLeft(cardsWrapperRef.current.scrollLeft)
+    setScrollTarget(null)
   }
 
   const handleMouseMove = (e) => {
@@ -27,14 +28,45 @@ const HorizontalCards = () => {
     e.preventDefault()
     const x = e.pageX - cardsWrapperRef.current.offsetLeft
     const distance = (x - startX) * multiplier
+    cardsWrapperRef.current.scrollLeft = scrollLeft - distance
+
+    // 自動滑動
     const currentScrollLeft = cardsWrapperRef.current.scrollLeft
-    cardsWrapperRef.current.scrollLeft +=
-      (currentScrollLeft - distance - scrollLeft) * 0.1
-    setScrollLeft(cardsWrapperRef.current.scrollLeft)
+    if (distance > 0) {
+      const newScrollTarget = currentScrollLeft + distance
+      if (newScrollTarget > scrollTarget) setScrollTarget(newScrollTarget)
+    } else {
+      const newScrollTarget = currentScrollLeft + distance
+      if (newScrollTarget < scrollTarget || scrollTarget === 0)
+        setScrollTarget(newScrollTarget)
+    }
   }
 
   const handleMouseUp = () => {
     setIsDragging(false)
+
+    if (scrollTarget === null) {
+      const currentScrollLeft = cardsWrapperRef.current.scrollLeft
+      let newScrollLeft
+      if (currentScrollLeft % 300 > 150) {
+        newScrollLeft = currentScrollLeft + 300 - (currentScrollLeft % 300)
+      } else {
+        newScrollLeft = currentScrollLeft - (currentScrollLeft % 300)
+      }
+      setScrollTarget(newScrollLeft)
+
+      const scrollStep = () => {
+        cardsWrapperRef.current.scrollLeft +=
+          (scrollTarget - cardsWrapperRef.current.scrollLeft) / 4
+        if (Math.abs(cardsWrapperRef.current.scrollLeft - scrollTarget) < 1) {
+          cardsWrapperRef.current.scrollLeft = scrollTarget
+        } else {
+          requestAnimationFrame(scrollStep)
+        }
+      }
+
+      requestAnimationFrame(scrollStep)
+    }
   }
 
   return (
