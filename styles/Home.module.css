@@ -1,3 +1,8 @@
+/* .main {
+  width: 100vw;
+  overflow-x: hidden;
+} */
+
 .header {
   position: fixed;
   top: 0;
@@ -32,12 +37,38 @@
   text-align: center;
 }
 
-.shuffleCards {
-  height: 300px;
-  margin-top: 50px;
+.container {
+  padding-left: 40px;
+  margin-bottom: 500px;
+}
+
+.shuffleCardsWrapper {
+  overflow-y: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-x: scroll;
+  gap: 30px;
+  cursor: grabbing;
+}
+
+.shuffleCardsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.shuffleCard {
+  margin-top: 50px;
+
+  width: 400px;
+  height: 800px;
+}
+
+.imageWrapper {
+  width: 400px;
+  height: 800px;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
 }
 
 .video-wrapper {
