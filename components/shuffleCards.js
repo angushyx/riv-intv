@@ -24,7 +24,11 @@ const ShuffleCards = () => {
           alt="shuffleOne"
           width="1000"
           height="1000"
-          className={styles.img}
+          className={`${styles.img} ${
+            isCardOneOnTop
+              ? styles.shuffleCardTwoImage
+              : styles.shuffleCardOneImage
+          }`}
         />
       </div>
       <div
@@ -38,7 +42,11 @@ const ShuffleCards = () => {
           alt="shuffleTwo"
           width="1000"
           height="1000"
-          className={styles.img}
+          className={`${styles.img} ${
+            isCardOneOnTop
+              ? styles.shuffleCardOneImage
+              : styles.shuffleCardTwoImage
+          }`}
         />
       </div>
     </div>
