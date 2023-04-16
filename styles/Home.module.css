@@ -37,12 +37,12 @@
   text-align: center;
 }
 
-.container {
+.horizontalCardContainer {
   padding-left: 40px;
   margin-bottom: 500px;
 }
 
-.shuffleCardsWrapper {
+.horizontalCardsWrapper {
   overflow-y: hidden;
   display: flex;
   overflow-x: scroll;
@@ -50,13 +50,12 @@
   cursor: grabbing;
 }
 
-.shuffleCardsWrapper::-webkit-scrollbar {
+.horizontalCardsWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.shuffleCard {
+.horizontalCard {
   margin-top: 50px;
-
   width: 400px;
   height: 800px;
 }

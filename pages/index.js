@@ -28,7 +28,7 @@ export default function Home() {
           We are a creative agency, film production,
           <br /> branded & original content creators.
         </div>
-        <div className={styles.container}>
+        <div className={styles.horizontalCardContainer}>
           <HorizontalCards />
         </div>
       </main>

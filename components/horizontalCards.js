@@ -44,10 +44,10 @@ const HorizontalCards = () => {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
       ref={cardsWrapperRef}
-      className={styles.shuffleCardsWrapper}
+      className={styles.horizontalCardsWrapper}
     >
       {cardImages.map((image, index) => (
-        <li className={styles.shuffleCard} key={index}>
+        <li className={styles.horizontalCard} key={index}>
           <div className={styles.imageWrapper}>
             <Image
               src={image}
