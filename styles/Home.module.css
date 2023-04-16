@@ -37,6 +37,65 @@
   text-align: center;
 }
 
+.shuffleCardsWrapper {
+  position: relative;
+  width: 80%;
+  margin: 150px auto;
+  margin-bottom: 500px;
+  height: 20px;
+  perspective: 1000px;
+}
+
+.shuffleCard {
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  transform-origin: top left;
+  cursor: pointer;
+  animation-duration: 1s;
+}
+
+/* A情況 */
+.shuffleCardOne {
+  z-index: 2;
+  top: 10%;
+  left: 10%;
+  transform: translate(20px, 0px) scale(1);
+}
+
+/* B情況 */
+.cardOneClicked {
+  z-index: 3;
+  transform: translate(100px, 0px) scale(0.8);
+}
+
+/* A情況 */
+.shuffleCardTwo {
+  z-index: 3;
+  top: 200px;
+  left: 40%;
+  transform: translate(20px, 0px) scale(1);
+}
+
+/* B情況 */
+.cardTwoClicked {
+  z-index: 2;
+  transform: scale(0.8);
+}
+
+.cardOneEnlarged {
+  transform: scale(1.2);
+}
+
+.cardTwoEnlarged {
+  transform: scale(1.2);
+}
+
+.enlarged {
+  transform: scale(1.2);
+}
+
 .horizontalCardContainer {
   padding-left: 40px;
   margin-bottom: 500px;
@@ -76,104 +135,4 @@
 
 .video {
   width: 100%;
-}
-
-.shuffleCardsWrapper {
-  position: relative;
-  width: 80%;
-  margin: 150px auto;
-  margin-bottom: 500px;
-  height: 20px;
-  perspective: 1000px;
-}
-
-.shuffleCard {
-  width: 50%;
-  margin: 0 auto;
-  position: absolute;
-  transition: all 0.3s ease-in-out;
-  transform-origin: top left;
-  cursor: pointer;
-  animation-duration: 1s;
-}
-
-/* A情況 */
-.shuffleCardOne {
-  z-index: 2;
-  top: 10%;
-  left: 10%;
-  transform: scale(1);
-}
-
-/* B情況 */
-.cardOneClicked {
-  z-index: 3;
-  transform: scale(0.8);
-}
-
-/* A情況 */
-.shuffleCardTwo {
-  z-index: 3;
-  top: 200px;
-  left: 40%;
-  transform: scale(1);
-}
-
-/* B情況 */
-.cardTwoClicked {
-  z-index: 2;
-  transform: scale(0.8);
-}
-
-.cardOneEnlarged {
-  transform: scale(1.2);
-}
-
-.cardTwoEnlarged {
-  transform: scale(1.2);
-}
-
-@keyframes cardOneAnimation {
-  0% {
-    /* 初始狀態 */
-    transform: translateX(0) scale(1);
-  }
-  50% {
-    /* 結束狀態 */
-    transform: translateX(-100px) scale(1.2);
-  }
-  100% {
-    /* 結束狀態 */
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes cardTwoAnimation {
-  0% {
-    /*
-@keyframes cardTwoAnimation {
-  0% {
-    /* 初始狀態 */
-    transform: translateX(0) scale(1);
-  }
-  50% {
-    /* 結束狀態 */
-    transform: translateX(100px) scale(1.2);
-  }
-  100% {
-    /* 結束狀態 */
-    transform: translateX(0) scale(1.2);
-  }
-}
-
-.enlarged {
-  transform: scale(1.2);
-}
-
-.paused {
-  animation-play-state: paused;
-}
-
-.running {
-  animation-play-state: running;
 }
